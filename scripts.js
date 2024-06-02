@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const profile = {
         name: "Embrace the darkness 🌑",
-        error: "Ulukanin Anasini Gotunden Sikeyim:<br><br>",
+        error: "Projects Of Anakin:<br><br>",
         profilePicture: "anakinss.jpg",
         views: localStorage.getItem('views') ? parseInt(localStorage.getItem('views')) : 726 // localStorage'dan alınan veya başlangıç değeri
     };
