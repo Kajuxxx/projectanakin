@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
         name: "Embrace the darkness 🌑",
         error: "Project's Of Anakin:<br><br>",
         profilePicture: "anakinss.jpg",
-        views: localStorage.getItem('views') ? parseInt(localStorage.getItem('views')) : 0 // localStorage'dan alınan veya başlangıç değeri
+        views: localStorage.getItem('views') ? parseInt(localStorage.getItem('views')) : 726 // localStorage'dan alınan veya başlangıç değeri
     };
 
     // Görüntüleme sayısını artır ve localStorage'a kaydet
