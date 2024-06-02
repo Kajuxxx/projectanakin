@@ -1,0 +1,231 @@
+body {
+    font-family: 'Roboto', sans-serif; /* Roboto'yu temel yazı tipi olarak kullan */
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Video taşmasını önler */
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+#overlay h1 {
+    font-size: 36px;
+    text-align: center;
+}
+
+video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Videonun tam ekranı kaplamasını sağlar */
+    z-index: -1;
+    display: none; /* Başlangıçta gizli */
+}
+
+.profile {
+    position: fixed; /* Merkezi konumlama için absolute yerine fixed kullanıyoruz */
+    top: 50%; /* Ekranın ortasına hizalamak için */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Merkezi hizalamak için */
+    text-align: center;
+    background: rgba(0, 0, 0, 0.8); /* Siyah arka plan ve şeffaflık */
+    padding: 40px; /* Çerçeveyi uzatmak için padding'i artırdık */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 1;
+    max-width: 400px; /* Genişliği artırdık */
+    color: white;
+    display: none; /* Başlangıçta gizli */
+    border: 2px solid transparent; /* Kenarlık için başlangıç durumu */
+    animation: glow 2s infinite; /* Alevli efekt animasyonu */
+}
+
+@keyframes glow {
+    0% {
+        border-color: transparent;
+        box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    }
+    50% {
+        border-color: rgba(255, 69, 0, 0.8);
+        box-shadow: 0 0 20px rgba(255, 69, 0, 1);
+    }
+    100% {
+        border-color: transparent;
+        box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    }
+}
+#buyuk{
+    font-size: 30px;
+}
+.profile img {
+    width: 100px;
+    height: 100px;
+    /* Yuvarlak profil resmi */
+    border-radius: 50%;
+ 
+   
+}
+
+.profile h1 {
+    font-family: 'Montserrat', sans-serif; /* Montserrat'ı başlıklar için kullan */
+    margin: 10px 0 5px;
+    font-size: 24px;
+}
+
+.profile p {
+    font-family: 'Roboto', sans-serif; /* Roboto'yu paragraf yazıları için kullan */
+    margin: 5px 0;
+    color: #ccc;
+}
+
+.profile a {
+    color: #0073e6;
+    text-decoration: none;
+}
+
+.profile a:hover {
+    text-decoration: underline;
+}
+
+.social-links {
+    display: flex;
+    justify-content: space-between; /* Profil öğelerini yatayda eşit boşlukla yayar */
+    margin-top: 10px;
+    flex-wrap: wrap; /* Linklerin taşmasını önlemek için */
+}
+
+.social-item {
+    flex-grow: 1; /* Eşit boşluk için flex-grow kullan */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10px; /* Yatayda eşit boşluk */
+    text-decoration: none; /* Link alt çizgisini kaldır */
+    color: white; /* Link metin rengini beyaz yap */
+    transition: transform 0.3s ease; /* Animasyon için geçiş efekti */
+}
+
+.social-item:hover {
+    transform: scale(1.1); /* Üzerine gelindiğinde büyüme efekti */
+}
+
+.social-item img {
+    width: 50px; /* Profil resmi genişliği */
+    height: 50px; /* Profil resmi yüksekliği */
+    border-radius: 50%; /* Yuvarlak resim */
+    margin-bottom: 5px;
+}
+
+.social-item p {
+    margin: 0;
+    color: #ccc; /* Metin rengini gri yap */
+}
+
+.social-item:hover p {
+    color: #fff; /* Üzerine gelindiğinde metin rengini beyaz yap */
+}
+
+.views {
+    margin-top: 10px;
+    color: #ccc;
+}
+
+.mute-button {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1001;
+    cursor: pointer;
+}
+
+.mute-button img {
+    width: 45px;
+    height: 60px;
+}
+
+/* Sol alt köşedeki metin için stil */
+.founders {
+    font-family: 'Lobster', cursive; /* Lobster fontu */
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    background: rgba(0, 0, 0, 0.5); /* Yarı şeffaf arka plan */
+    padding: 10px;
+    border-radius: 5px;
+    animation: fadeInOut 3s infinite; /* Hareketli animasyon */
+}
+
+.more-to-come {
+    font-family: 'Raleway', sans-serif; /* More to come... metni için farklı bir font */
+    margin-top: 20px; /* Üstten boşluk */
+    color: #ffc107; /* Sarı renk */
+    font-size: 18px; /* Yazı boyutu */
+}
+
+/* Fade in and out animasyonu */
+@keyframes fadeInOut {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+/* Mobil cihazlar için uyumluluk */
+@media (max-width: 600px) {
+    .profile {
+        max-width: 90%; /* Genişliği mobil için ayarla */
+        padding: 20px; /* Padding'i küçült */
+    }
+    .social-item img {
+        width: 40px; /* Profil resmi genişliği */
+        height: 40px; /* Profil resmi yüksekliği */
+    }
+    .profile h1 {
+        font-size: 20px; /* Başlık boyutunu küçült */
+    }
+    .profile p {
+        font-size: 14px; /* Metin boyutunu küçült */
+    }
+    .founders {
+        font-size: 12px; /* Sol alttaki metnin boyutunu küçült */
+        padding: 5px; /* Padding'i küçült */
+    }
+}
+
+/* Tablet cihazlar için uyumluluk */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .profile {
+        max-width: 80%; /* Genişliği tablet için ayarla */
+        padding: 30px; /* Padding'i ayarla */
+    }
+    .social-item img {
+        width: 45px; /* Profil resmi genişliği */
+        height: 45px; /* Profil resmi yüksekliği */
+    }
+    .profile h1 {
+        font-size: 22px; /* Başlık boyutunu ayarla */
+    }
+    .profile p {
+        font-size: 16px; /* Metin boyutunu ayarla */
+    }
+    .founders {
+        font-size: 14px; /* Sol alttaki metnin boyutunu ayarla */
+        padding: 8px; /* Padding'i ayarla */
+    }
+}
+.dcl{
+    text-decoration: none;
+}
